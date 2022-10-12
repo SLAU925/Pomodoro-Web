@@ -1,0 +1,19 @@
+.timer-box{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 38vh;
+}
+
+.pad{
+    padding: 1.3rem;
+}
+
+@media screen and (max-width: 762px){
+    .timer-box{
+        top: 32vh;
+    }
+}
