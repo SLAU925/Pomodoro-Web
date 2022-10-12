@@ -1,7 +1,7 @@
 import './App.css';
 import Timer from './components/Timer';
 import { ChakraProvider } from '@chakra-ui/react'
-import img from "./image/onepiece.jpg"
+import img from "./images/onepiece.jpg"
 
 function App() {
   return (
