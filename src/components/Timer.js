@@ -12,7 +12,8 @@ const breakpoints = {
 const theme = extendTheme({ breakpoints })
 
 const Timer = () =>{
-    const STARTING_TIME = 1800;
+    const DIFFERENCE = 60;
+    const STARTING_TIME = 1;
     const [started, setStarted] = useState(false);
     const [timer,setTimer] = useState(STARTING_TIME);
     const timerRef = useRef();
@@ -57,13 +58,13 @@ const Timer = () =>{
         setEnd(false);
     }
     const addHandler = ()=>{
-        setTimer(timer=>timer + 30)
+        setTimer(timer=>timer + DIFFERENCE)
     };
     const decHandler = ()=>{
-        if(timer <= 30){
+        if(timer <= DIFFERENCE){
             return
         };
-        setTimer(timer=>timer - 30)
+        setTimer(timer=>timer - DIFFERENCE)
     };
 
     return <div  className="timer-box">
@@ -71,8 +72,8 @@ const Timer = () =>{
             <Flex flexDirection={{base:'column',md: 'row'}}>
                 {!end && <Button  margin={1} colorScheme='teal' onClick={startHandler}>{displayBtn}</Button>}
                 <Button margin={1} size='md' colorScheme='red' onClick={resetHandler}>RESET</Button>
-                <Button margin={1} size='md' colorScheme='teal' onClick={addHandler}>+</Button>
-                <Button margin={1} size='md' colorScheme='teal' onClick={decHandler}>-</Button>
+                {!started && !end &&<Button margin={1} size='md' colorScheme='teal' onClick={addHandler}>+</Button>}
+                {!started && !end && <Button margin={1} size='md' colorScheme='teal' onClick={decHandler}>-</Button>}
             </Flex>
     </div>
 }
