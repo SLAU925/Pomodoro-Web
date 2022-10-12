@@ -1,8 +1,8 @@
 import "./Timer.css"
 import {useState, useEffect, useRef} from "react";
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import { Heading } from '@chakra-ui/react'
-import { Box, Flex } from "@chakra-ui/react"
+import { Flex } from "@chakra-ui/react"
 import { extendTheme } from '@chakra-ui/react'
 
 const breakpoints = {
