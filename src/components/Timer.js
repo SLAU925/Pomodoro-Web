@@ -13,7 +13,7 @@ const theme = extendTheme({ breakpoints })
 
 const Timer = () =>{
     const DIFFERENCE = 60;
-    const STARTING_TIME = 1;
+    const STARTING_TIME = 1800;
     const [started, setStarted] = useState(false);
     const [timer,setTimer] = useState(STARTING_TIME);
     const timerRef = useRef();
