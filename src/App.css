@@ -11,7 +11,7 @@
 }
 
 .bg {
-  background-image: url("/public/image/onepiece.jpg");
+  background-image: url("./images/onepiece.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
