@@ -52,8 +52,9 @@ const Music = () => {
     }
 
 
-    return <Button className="my-btn" size="md" colorScheme={color} onClick={musicHandler}>{displayMusic}</Button>
-
+    return <div className="my-btn">
+        <Button size="md" colorScheme={color} onClick={musicHandler}>{displayMusic}</Button>
+    </div>
     
 }
 
