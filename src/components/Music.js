@@ -1,5 +1,9 @@
 import uta from "../audio/uta.mp3"
-import {Howl, Howler} from 'howler';
+import ang from "../audio/anglianhua.mp3"
+import guilty from "../audio/guilty.mp3"
+import homura from "../audio/Homura.mp3"
+import juju from "../audio/juju.mp3"
+import {Howl} from 'howler';
 import {useState, useRef} from "react";
 import { Button } from '@chakra-ui/react'
 import "./Music.css"
@@ -11,7 +15,8 @@ const Music = () => {
     const [color,setColor] = useState('teal')
     
     const sound = new Howl({
-        src: [uta]        
+        src: [ang,uta,juju,homura,guilty], 
+        loop: true 
     })
 
     const musicRef = useRef(sound);
