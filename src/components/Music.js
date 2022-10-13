@@ -5,7 +5,7 @@ import homura from "../audio/Homura.mp3"
 import juju from "../audio/juju.mp3"
 import {Howl} from 'howler';
 import {useState, useRef} from "react";
-import { Button } from '@chakra-ui/react'
+import { Button, ButtonGroup } from '@chakra-ui/react'
 import "./Music.css"
 
 
@@ -13,20 +13,20 @@ const Music = () => {
     const [started,setStarted] = useState(false);
     const [displayMusic, setDisplayMusic] = useState("🔊")
     const [color,setColor] = useState('teal')
-    
-    const sound = new Howl({
-        src: [ang,uta,juju,homura,guilty], 
-        loop: true 
+
+    const songs = [uta,ang,juju,homura,guilty];
+    let sound = new Howl({
+        src: songs, 
+        loop: true,
+        volume: 0.5,
     })
 
     const musicRef = useRef(sound);
 
     const playMusic = () => {
         if(started){
-            console.log(started)
             return
         }else{
-            console.log(started)
             setStarted(true);
             musicRef.current.play()
         }
@@ -52,9 +52,9 @@ const Music = () => {
     }
 
 
-    return <div className="my-btn">
+    return <ButtonGroup className="my-btn">
         <Button size="md" colorScheme={color} onClick={musicHandler}>{displayMusic}</Button>
-    </div>
+    </ButtonGroup>
     
 }
 
