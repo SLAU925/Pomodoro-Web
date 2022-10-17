@@ -2,7 +2,7 @@ import './App.css';
 import Timer from './components/Timer';
 import { ChakraProvider } from '@chakra-ui/react'
 import img from "./images/onepiece.jpg"
-import Music from './components/Music';
+import Play from './components/Play';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <img className="bg" src={img} alt="404" />
         <Timer />
       </div>
-      <Music />
+      <Play />
 
     </ChakraProvider>
   );

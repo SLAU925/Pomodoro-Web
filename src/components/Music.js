@@ -1,27 +1,32 @@
-import uta from "../audio/uta.mp3"
-import ang from "../audio/anglianhua.mp3"
-import guilty from "../audio/guilty.mp3"
-import homura from "../audio/Homura.mp3"
-import juju from "../audio/juju.mp3"
 import {Howl} from 'howler';
 import {useState, useRef} from "react";
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import "./Music.css"
+import { useEffect } from "react"
 
 
-const Music = () => {
+const Music = (props) => {
     const [started,setStarted] = useState(false);
     const [displayMusic, setDisplayMusic] = useState("🔊")
     const [color,setColor] = useState('teal')
 
-    const songs = [uta,ang,juju,homura,guilty];
+    let track = props.track;
     let sound = new Howl({
-        src: songs, 
-        loop: true,
-        volume: 0.5,
-    })
-
+            src: [track], 
+            loop: true,
+            volume: 1,
+        })
     const musicRef = useRef(sound);
+
+    useEffect(()=>{
+        musicRef.current.src = [track]
+        console.log(musicRef.current)
+    },[track])
+
+    
+    
+
+    
 
     const playMusic = () => {
         if(started){
@@ -40,6 +45,7 @@ const Music = () => {
     }
 
     const musicHandler = () => {
+        console.log(props.track)
         if(started){
             setDisplayMusic("🔇")
             setColor('red')
